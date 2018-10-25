@@ -20,9 +20,9 @@
                   <div class="form-group {{ $errors->has('suplier_id') ? 'has-error' : '' }}">
                      <input type="hidden" name="id" id="id">
 
-                     <label>Nama Suplier</label>
+                     <label>Nama Supplier</label>
                      <select class="form-control select-dua" name="suplier_id" id="suplier_id" style="width: 468px">
-                     	<option disabled selected>Pilih Suplier</option>
+                     	<option disabled selected>Pilih Supplier</option>
                      	@foreach($suplier as $data)
                      	<option value="{{$data->id}}">{{$data->Nama}}</option>
                      	@endforeach

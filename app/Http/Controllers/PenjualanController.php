@@ -128,7 +128,21 @@ class PenjualanController extends Controller
     public function edit($id)
     {
         $penjualan = Penjualan::findOrFail($id);
-        return $penjualan;
+        $kategorisub = KategoriBarang::where('parent_id', $penjualan->kat_id)->get();
+        $sub = '';
+        foreach ($kategorisub as $key => $value) {
+
+            if ($value->id == $penjualan->sub_id) {
+                $selected = 'selected';
+            }else{
+                $selected = '';
+            }
+
+            $sub .= '<option value="' .$value->id. '" '.$selected.'>' .$value->Nama_Kategori. '</option>';
+        }
+        $data['penjualan']=$penjualan;
+        $data['sub']=$sub;
+        return $data;
     }
 
     /**

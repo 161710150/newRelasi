@@ -122,7 +122,21 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::findOrFail($id);
-        return $barang;
+        $kategorisub = KategoriBarang::where('parent_id', $barang->kat_id)->get();
+        $sub = '';
+        foreach ($kategorisub as $key => $value) {
+
+            if ($value->id == $barang->id_parent) {
+                $selected = 'selected';
+            }else{
+                $selected = '';
+            }
+
+            $sub .= '<option value="' .$value->id. '" '.$selected.'>' .$value->Nama_Kategori. '</option>';
+        }
+        $data['barang']=$barang;
+        $data['sub']=$sub;
+        return $data;
     }
 
     /**

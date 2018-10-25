@@ -198,26 +198,26 @@
                 console.log(data);
                 state = "update";
 
-                $('#id').val(data.id);
-                $('#Kode_Penjualan').val(data.Kode_Penjualan);
-                $('#Tanggal_Jual').val(data.Tanggal_Jual);
-                $('#Nama_Pelanggan').val(data.Nama_Pelanggan);
-                $('#Barang_id').val(data.Barang_id);
-                $('#kat_id').val(data.kat_id);
-                $('#sub_id').val(data.sub_id);
-                $('#Jumlah').val(data.Jumlah);
+                $('#id').val(data.penjualan.id);
+                $('#Kode_Penjualan').val(data.penjualan.Kode_Penjualan);
+                $('#Tanggal_Jual').val(data.penjualan.Tanggal_Jual);
+                $('#Nama_Pelanggan').val(data.penjualan.Nama_Pelanggan);
+                $('#Barang_id').val(data.penjualan.Barang_id);
+                $('#kat_id').val(data.penjualan.kat_id);
+                $('#sub_id').append(data.sub);
+                $('#Jumlah').val(data.penjualan.Jumlah);
                 $('.select-dua').select2();
 
-
-                  $('#jualModal').modal('show');
-                  $('#aksi').val('Update');
-                  $('.modal-title').text('Edit Data');
-                }
-              });
+                $('#jualModal').modal('show');
+                $('#aksi').val('Update');
+                $('.modal-title').text('Edit Data');
+              }
+            });
           });
 
           $(document).on('hide.bs.modal','#jualModal', function() {
             $('#jual_table').DataTable().ajax.reload();
+            $('#sub_id').find('option').remove();
           });
 
           //proses delete data
@@ -256,7 +256,7 @@
               var katID = $(this).val();
               if(katID) {
                 $.ajax({
-                  url: '/myformjual/ajax/'+katID,
+                  url: '/myform/ajax/'+katID,
                   type: "GET",
                   dataType: "json",
                   success:function(data) {

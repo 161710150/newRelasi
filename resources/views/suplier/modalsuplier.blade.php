@@ -20,7 +20,7 @@
                   <div class="form-group">
                      <input type="hidden" name="id" id="id">
                
-                     <label>Nama Suplier</label>
+                     <label>Nama Supplier</label>
                      <input type="text" name="Nama" id="Nama" class="form-control" placeholder="masukan nama anda" />
                      <span class="help-block has-error Nama_error"></span>
                   </div>

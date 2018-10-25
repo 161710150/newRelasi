@@ -23,7 +23,7 @@
               <li class="nav-item">
                 <a href="indexsuplier" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>DataTables Suplier</p>
+                  <p>DataTables Supplier</p>
                 </a>
               </li>
               <li class="nav-item">

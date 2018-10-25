@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Tables Suplier</h1>
+            <h1>Data Tables Supplier</h1>
           </div>
           <!-- <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -31,7 +31,7 @@
               <table id="suplier_table" class="table table-bordered" style="width:100%">
                   <thead>
                      <tr>
-                        <th>Nama Suplier</th>
+                        <th>Nama Supplier</th>
                         <th>Jenis Kelamin</th>
                         <th>Asal Kota</th>
                         <th>Action</th>

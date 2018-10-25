@@ -30,7 +30,7 @@
                <table id="bar_table" class="table table-bordered" style="width:100%">
                   <thead>
                      <tr>
-                        <th>Nama Suplier</th>
+                        <th>Nama Supplier</th>
                         <th>Kategori Barang</th>
                         <th>Nama Barang</th>
                         <th>Merk Barang</th>
@@ -194,13 +194,13 @@
           console.log(data);
           state = "update";
 
-          $('#id').val(data.id);
-          $('#suplier_id').val(data.suplier_id);
-          $('#kat_id').val(data.kat_id);
-          $('#id_parent').val(data.id_parent);
-          $('#Merk').val(data.Merk);
-          $('#Harga_Satuan').val(data.Harga_Satuan);
-          $('#Stok').val(data.Stok);
+          $('#id').val(data.barang.id);
+          $('#suplier_id').val(data.barang.suplier_id);
+          $('#kat_id').val(data.barang.kat_id);
+          $('select[name="id_parent"]').append(data.sub);
+          $('#Merk').val(data.barang.Merk);
+          $('#Harga_Satuan').val(data.barang.Harga_Satuan);
+          $('#Stok').val(data.barang.Stok);
           $('.select-dua').select2();
 
 
@@ -213,6 +213,7 @@
 
     $(document).on('hide.bs.modal','#barangModal', function() {
       $('#bar_table').DataTable().ajax.reload();
+      $('#id_parent').find('option').remove();
     });
 
     //proses delete data
@@ -266,7 +267,7 @@
                 $('select[name="id_parent"]').empty();
             }
         });
-    });
-    });
+      });
+  });
 </script>
 @endpush      

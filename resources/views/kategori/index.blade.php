@@ -200,6 +200,7 @@
 
           $(document).on('hide.bs.modal','#Modalkat', function() {
             $('#tablekat').DataTable().ajax.reload();
+            location.reload();
           });
 
           //proses delete data
