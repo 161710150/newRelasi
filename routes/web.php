@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('downloadExcel/{type}', 'PenjualanController@downloadExcel');
+
 Route::get('kategorisub', function(){
 	return App\KategoriBarang::with('turunan')
 	->where('parent_id')

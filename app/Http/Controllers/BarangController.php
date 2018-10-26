@@ -52,8 +52,10 @@ class BarangController extends Controller
     public function myformAjax($id)
     {
         $sub = DB::table("kategori_barangs")
-                    ->where("parent_id",$id)
-                    ->pluck("Nama_Kategori","id");
+        ->join('barangs','kategori_barangs.id','=','barangs.id_parent')
+        ->where("kategori_barangs.parent_id",$id)
+        ->pluck("kategori_barangs.Nama_Kategori","kategori_barangs.id");
+        
         return json_encode($sub);
     }
 

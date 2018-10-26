@@ -39,7 +39,7 @@
 
                <div class="modal-footer">
                   <input type="submit" name="submit" id="aksi" value="Tambah" class="btn btn-info" />
-                  <input type="button" value="Cancel" class="btn btn-default" data-dismiss="modal"/>
+                  <input type="button" value="Cancel" id="cancel" class="btn btn-default" data-dismiss="modal"/>
                </div>
             </form>
          </div>

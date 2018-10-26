@@ -9,6 +9,7 @@ use Yajra\DataTables\DataTables;
 use App\Barang;
 use App\KategoriBarang;
 use DB;
+use Excel;
 
 class PenjualanController extends Controller
 {
@@ -232,5 +233,15 @@ class PenjualanController extends Controller
         {
             echo 'Data Deleted';
         }
+    }
+    public function downloadExcel($type)
+    {
+        $data = Penjualan::get()->toArray();
+        return Excel::create('Excel_Penjualan', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download($type);
     }
 }

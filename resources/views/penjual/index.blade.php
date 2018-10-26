@@ -18,7 +18,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header" style="margin-bottom: 15px">
-              <button type="button" name="add" id="Tambah" class="btn btn-primary">Add Data</button>
+              <button type="button" name="add" id="Tambah" class="btn btn-primary">Add Data</button><a href="{{ URL::to('downloadExcel/xls') }}"><button style="margin-left: 10px" class="btn btn-success">Download Excel</button></a>
             </div>
               <div class="panel panel-body">
                  <table id="jual_table" class="table table-bordered" style="width:100%">
